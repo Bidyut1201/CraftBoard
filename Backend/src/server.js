@@ -6,6 +6,8 @@ import path from "path"
 import notesRoutes from "../src/routes/notesRoutes.js"
 import { connectDB } from "./config/db.js";
 import rateLimiter from "./middleware/rateLimiter.js";
+import authRoutes  from '../src/routes/authRoutes.js';
+
 
 
 dotenv.config();
@@ -30,6 +32,8 @@ app.use(rateLimiter)
 
 
 app.use("/api/notes", notesRoutes);
+app.use('/api/auth',  authRoutes);
+app.use('/api/notes', notesRoutes);
 
 if(process.env.NODE_ENV === "production"){
     app.use(express.static(path.join(__dirname,"../Frontend/dist")))
