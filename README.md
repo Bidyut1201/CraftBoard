@@ -2,6 +2,7 @@
 
 CraftBoard is a full-stack Notes Application built using the MERN stack that allows users to create, update, and delete notes with a smooth and responsive user experience.
 
+🚀 Live Demo: https://craftboard-xii9.onrender.com
 ---
 
 ## 🚀 Features
