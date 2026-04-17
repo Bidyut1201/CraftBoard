@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import api from "../lib/axios";
@@ -29,50 +30,85 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-base-200">
-      <div className="card bg-base-100 w-full max-w-md">
-        <div className="card-body">
-          <h2 className="card-title text-2xl mb-4 justify-center">Register</h2>
-          <form onSubmit={handleSubmit}>
-            <div className="form-control mb-4">
-              <label className="label"><span className="label-text">Name</span></label>
-              <input
-                type="text"
-                placeholder="Your name"
-                className="input input-bordered"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </div>
-            <div className="form-control mb-4">
-              <label className="label"><span className="label-text">Email</span></label>
-              <input
-                type="email"
-                placeholder="you@example.com"
-                className="input input-bordered"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="form-control mb-6">
-              <label className="label"><span className="label-text">Password</span></label>
-              <input
-                type="password"
-                placeholder="••••••••"
-                className="input input-bordered"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-            <button type="submit" className="btn btn-primary w-full" disabled={loading}>
-              {loading ? "Registering..." : "Register"}
-            </button>
-          </form>
-          <p className="text-center mt-4 text-sm">
-            Already have an account?{" "}
-            <Link to="/login" className="text-primary hover:underline">Login</Link>
-          </p>
-        </div>
+    <div
+      className="min-h-screen flex items-center justify-center p-6"
+      style={{ background: "radial-gradient(125% 125% at 50% 10%, #000 60%, #00FF9D40 100%)" }}
+    >
+      <div
+        className="w-full max-w-md rounded-2xl p-8 sm:p-10 flex flex-col justify-center"
+        style={{ background: "rgba(255,255,255,0.03)", border: "0.5px solid rgba(255,255,255,0.1)" }}
+      >
+        <h2 className="text-2xl font-medium text-white mb-1">Create an account</h2>
+        <p className="text-sm mb-8" style={{ color: "rgba(255,255,255,0.4)" }}>
+          Sign up to start organizing your notes
+        </p>
+
+        <form onSubmit={handleSubmit}>
+          <div className="mb-5">
+            <label
+              className="block text-xs mb-1.5 tracking-widest uppercase"
+              style={{ color: "rgba(255,255,255,0.5)" }}
+            >
+              Name
+            </label>
+            <input
+              type="text"
+              placeholder="Your name"
+              className="w-full rounded-xl px-4 py-3 text-sm text-white outline-none"
+              style={{ background: "rgba(255,255,255,0.05)", border: "0.5px solid rgba(255,255,255,0.12)" }}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+
+          <div className="mb-5">
+            <label
+              className="block text-xs mb-1.5 tracking-widest uppercase"
+              style={{ color: "rgba(255,255,255,0.5)" }}
+            >
+              Email
+            </label>
+            <input
+              type="email"
+              placeholder="you@example.com"
+              className="w-full rounded-xl px-4 py-3 text-sm text-white outline-none"
+              style={{ background: "rgba(255,255,255,0.05)", border: "0.5px solid rgba(255,255,255,0.12)" }}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+
+          <div className="mb-5">
+            <label
+              className="block text-xs mb-1.5 tracking-widest uppercase"
+              style={{ color: "rgba(255,255,255,0.5)" }}
+            >
+              Password
+            </label>
+            <input
+              type="password"
+              placeholder="••••••••"
+              className="w-full rounded-xl px-4 py-3 text-sm text-white outline-none"
+              style={{ background: "rgba(255,255,255,0.05)", border: "0.5px solid rgba(255,255,255,0.12)" }}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full rounded-xl py-3 text-sm font-medium text-black mt-1"
+            style={{ background: "#00FF9D" }}
+          >
+            {loading ? "Registering..." : "Create account"}
+          </button>
+        </form>
+
+        <p className="text-center mt-6 text-sm" style={{ color: "rgba(255,255,255,0.35)" }}>
+          Already have an account?{" "}
+          <Link to="/login" style={{ color: "#00FF9D" }}>Login</Link>
+        </p>
       </div>
     </div>
   );
