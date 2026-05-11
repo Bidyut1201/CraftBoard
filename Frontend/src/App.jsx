@@ -9,7 +9,6 @@ import ProtectedRoute from "./components/ProtectedRoute"
 import LandingPage from "./pages/LandingPage";
 
 
-
 const App = () => {
   return (
     <div className='relative h-full w-full'>
