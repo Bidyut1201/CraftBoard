@@ -65,9 +65,10 @@ const HomePage = () => {
       {/* Floating New Note button - bottom right */}
       <Link
         to={"/create"}
-        className='fixed bottom-6 right-6 btn btn-primary btn-circle shadow-lg w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center'
+        className='fixed bottom-6 right-6 shadow-lg flex items-center justify-center rounded-full bg-primary'
+        style={{ width: '50px', height: '50px' }}
       >
-        <PlusIcon className='size-4 sm:size-6' />
+        <PlusIcon className='text-white' style={{ width: '22px', height: '22px' }} />
       </Link>
 
     </div>
